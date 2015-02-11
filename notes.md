@@ -22,6 +22,10 @@
 * uh oh, doesn't work with `file://` (CORS)
   * `node app.js`
 
+# Part four - templates
 
+* templates are "normal" HTML, and not strings
+* Unfortunately no declarative databinding
+* Still vulnerable to external styles
 
 [soup]: http://www.html5rocks.com/en/tutorials/webcomponents/customelements/gmail.png

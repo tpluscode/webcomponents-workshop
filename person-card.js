@@ -1,27 +1,27 @@
-(function(document) {
+var importDoc = document.currentScript.ownerDocument;
+var PersonCard = Object.create(HTMLElement.prototype);
 
-  var PersonCard = Object.create(HTMLElement.prototype);
+PersonCard.attachedCallback = function() {
+  var firstName = this.getAttribute('firstName');
+  var lastName = this.getAttribute('lastName');
+  var position = this.getAttribute('position');
+  var company = this.getAttribute('company');
+  var twitter = this.getAttribute('twitter');
+  var gravatar = 'http://www.gravatar.com/avatar/' + CryptoJS.MD5(this.getAttribute('email'));
 
-  PersonCard.attachedCallback = function() {
-    var firstName = this.getAttribute('firstName');
-    var lastName = this.getAttribute('lastName');
-    var position = this.getAttribute('position');
-    var company = this.getAttribute('company');
-    var twitter = this.getAttribute('twitter');
-    var gravatar = 'http://www.gravatar.com/avatar/' + CryptoJS.MD5(this.getAttribute('email'));
+  var template = importDoc.querySelector('#person-card-template');
+  template.content.querySelector('#person-card img').src = gravatar;
+  template.content.querySelector('#person-card img').alt += firstName + ' ' + lastName;
+  template.content.querySelector('#person-card .firstName').innerText = firstName;
+  template.content.querySelector('#person-card .lastName').innerText = lastName;
+  template.content.querySelector('#person-card .position').innerText = position;
+  template.content.querySelector('#person-card .company').innerText = company;
+  template.content.querySelector('#person-card a').innerText = '@' + twitter;
+  template.content.querySelector('#person-card a').href = 'http://twitter.com/' + twitter;
 
-    this.innerHTML = '<div id="person-card"> \
-          <img id="gravatar" src="' + gravatar + '" alt="Gravatar of ' + firstName + ' ' + lastName + '"> \
-          <h2> \
-            <span class="firstName">' + firstName + '</span> <span class="lastName">' + lastName + '</span> \
-          </h2> \
-          <h3>' + position + ' @ ' + company + '</h3> \
-          <a href="http://twitter.com/tpluscode">@' + twitter + '</a> \
-      </div>';
-  };
+  this.appendChild(document.importNode(template.content, true));
+};
 
-  document.registerElement('person-card', {
-    prototype: PersonCard
-  });
-
-})(document);
+document.registerElement('person-card', {
+  prototype: PersonCard
+});
