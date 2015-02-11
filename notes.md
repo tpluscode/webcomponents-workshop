@@ -15,4 +15,13 @@
 * Still vulnerable to external styles
 * What if it depends on external code
 
+# Part three - html import
+
+* HTML and javascript can com in one package
+  * and more nested imports
+* uh oh, doesn't work with `file://` (CORS)
+  * `node app.js`
+
+
+
 [soup]: http://www.html5rocks.com/en/tutorials/webcomponents/customelements/gmail.png
