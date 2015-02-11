@@ -28,4 +28,10 @@
 * Unfortunately no declarative databinding
 * Still vulnerable to external styles
 
+# Part five - shadow DOM
+
+* Encapsulates parts of page
+  * Think HTML5 video player
+* Gotcha: shadow root cannot be used alongside light DOM
+
 [soup]: http://www.html5rocks.com/en/tutorials/webcomponents/customelements/gmail.png

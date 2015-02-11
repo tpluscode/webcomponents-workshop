@@ -19,7 +19,9 @@ PersonCard.attachedCallback = function() {
   template.content.querySelector('#person-card a').innerText = '@' + twitter;
   template.content.querySelector('#person-card a').href = 'http://twitter.com/' + twitter;
 
-  this.appendChild(document.importNode(template.content, true));
+  var shadowRoot = this.createShadowRoot();
+
+  shadowRoot.appendChild(document.importNode(template.content, true));
 };
 
 document.registerElement('person-card', {
