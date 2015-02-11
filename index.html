@@ -2,26 +2,16 @@
 <head>
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
   <script src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/md5.js"></script>
+  <script src="person-card.js"></script>
   <style>
-    .lastName {
+    person-card .lastName {
       text-decoration: underline
     }
   </style>
 </head>
 <body>
-  <div id="person-card">
-      <img id="gravatar" alt="Gravatar of Tomasz Pluskiewicz">
-      <h2>
-        <span class="firstName">Tomasz</span> <span class="lastName">Pluskiewicz</span>
-      </h2>
-      <h3>
-        Software dev @ PGS Software
-      </h3>
-      <a href="http://twitter.com/tpluscode">@tpluscode</a>
-  </div>
-
-  <script>
-    document.querySelector('#gravatar').src = 'http://www.gravatar.com/avatar/' + CryptoJS.MD5('tomasz@pluskiewicz.pl')
-  </script>
+  <person-card firstName="Tomasz" lastName="Pluskiewicz"
+               email="tomasz@pluskiewicz.pl" company="PGS Software"
+               position="Software dev" twitter="tpluscode"></person-card>
 </body>
 </html>
