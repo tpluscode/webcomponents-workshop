@@ -34,4 +34,16 @@
   * Think HTML5 video player
 * Gotcha: shadow root cannot be used alongside light DOM
 
+# Part six - Polymer
+
+* Custom element to create custom elements
+* Many features
+  * Two way data binding with many expressions
+  * Nested templates (repeated, conditional, etc)
+  * filters like in Angular
+  * Shadow DOM by default
+* There is also [Bosonic][bosonic] and [x-tags][xt]
+
 [soup]: http://www.html5rocks.com/en/tutorials/webcomponents/customelements/gmail.png
+[bosonic]: http://bosonic.github.io/
+[xt]: http://www.x-tags.org/
