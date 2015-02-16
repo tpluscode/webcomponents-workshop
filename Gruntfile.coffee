@@ -71,7 +71,7 @@ module.exports = (grunt) ->
                         'img/**'
                         'css/**',
                         'CNAME',
-                        'examples'
+                        'examples/**'
                     ]
                     dest: 'dist/'
                 },{
