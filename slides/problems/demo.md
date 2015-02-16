@@ -1,1 +1,1 @@
-[DEMO](/examples/problems.html)
+<a href="/examples/problems.html" target="_blank">DEMO></a>
