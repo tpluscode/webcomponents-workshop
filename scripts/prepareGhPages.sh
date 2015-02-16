@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 rm -rf dist
-git clone https://github.com/tpluscode/gitlink-presentation.git dist
+git clone https://github.com/tpluscode/webcomponents-workshop.git dist
 cd dist
 git checkout gh-pages
 find . -maxdepth 1 -not -name 'README.md' -not -path '*/\.*' | xargs rm -rf
