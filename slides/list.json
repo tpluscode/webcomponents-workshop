@@ -30,8 +30,9 @@
         "polymer/polymer-more.md"
     ],
     [
-        "summary.md",
         "google-map/pure-code.html",
         "google-map/pure.html"
-    ]
+    ],
+    "summary.md",
+    "is-it-ready.md"
 ]
