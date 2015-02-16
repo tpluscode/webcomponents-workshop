@@ -1,3 +1,3 @@
 ## HTML Imports
 
-<a href="/examples/imports/">demo</a>
+<a href="/examples/imports/" target="_blank">demo</a>

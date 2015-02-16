@@ -20,10 +20,6 @@
         "web-components/templates-summary.md"
     ],
     [
-        "web-components/templates.md",
-        "web-components/templates-summary.md"
-    ],
-    [
         "web-components/shadow-dom.md",
         "web-components/shadow-dom-summary.md"
     ],
