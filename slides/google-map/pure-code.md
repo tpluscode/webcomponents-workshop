@@ -1,3 +1,4 @@
+
 ``` js
 <script src="/bower_components/webcomponentsjs/webcomponents.min.js" ></script>
 <link rel="import" href="/bower_components/google-map/google-map.html" />
@@ -11,7 +12,7 @@
     }
 </style>
 
-<google-map fittomarkers>
+<google-map>
     <google-map-marker latitude="51.106217" longitude="16.971148"
                        title="PGS Wrocław">
     </google-map-marker>

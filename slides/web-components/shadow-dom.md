@@ -1,3 +1,3 @@
 ## Shadow DOM
 
-<a href="/examples/shadow-dom/">DEMO</a>
+<a href="/examples/shadow-dom/" target="_blank" >DEMO</a>
