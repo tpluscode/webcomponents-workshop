@@ -1,3 +1,3 @@
 ## Templates
 
-<a href="/examples/templates.html">DEMO</a>
+<a href="/examples/templates/">DEMO</a>
