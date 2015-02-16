@@ -1,3 +1,3 @@
 ## Custom elements
 
-<a href="/examples/custom-elements.html">DEMO</a>
+<a href="/examples/custom-element.html">DEMO</a>
