@@ -3,7 +3,8 @@
     [
         "problems/index.md",
         "problems/problems.md",
-        "problems/div-soup.md"
+        "problems/div-soup.md",
+        "problems/demo.md"
     ],
     "web-components/index.md",
     [
