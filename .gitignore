@@ -1,1 +1,9 @@
 node_modules
+bower_components
+dist
+*.log
+.sass-cache
+index.html
+.idea/workspace.xml
+.idea/tasks.xml
+*.iml
