@@ -1,1 +1,1 @@
-<a href="/examples/problems.html" target="_blank">DEMO></a>
+<a href="/examples/problems.html" target="_blank">DEMO</a>

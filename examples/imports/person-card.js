@@ -16,7 +16,7 @@
             <span class="firstName">' + firstName + '</span> <span class="lastName">' + lastName + '</span> \
           </h2> \
           <h3>' + position + ' @ ' + company + '</h3> \
-          <a href="http://twitter.com/' + twitter + '>@' + twitter + '</a> \
+          <a href="http://twitter.com/' + twitter + '">@' + twitter + '</a> \
       </div>';
     };
 
