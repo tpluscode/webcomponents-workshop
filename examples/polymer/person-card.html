@@ -8,7 +8,8 @@
       }
     </style>
     <div id="person-card">
-        <img id="gravatar" src="http://www.gravatar.com/avatar/{{ email | hash }}" alt="Gravatar of {{ firstName }} {{ lastName }}">
+        <img id="gravatar" src="http://www.gravatar.com/avatar/{{ email | hash }}"
+             alt="Gravatar of {{ firstName }} {{ lastName }}">
         <h2>
           <span class="firstName">{{ firstName }}</span> <span class="lastName">{{ lastName }}</span>
         </h2>
