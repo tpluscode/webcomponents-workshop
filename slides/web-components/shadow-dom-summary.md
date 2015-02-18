@@ -1,5 +1,6 @@
 ## Shadow DOM
 
-* Encapsulates parts of page
+* Encapsulates parts of page (`id`s & styles)
   * Think HTML5 video player
-* Gotcha: shadow root cannot be used alongside light DOM
+* shadow DOM cannot be used alongside light DOM
+* difficult polyfill

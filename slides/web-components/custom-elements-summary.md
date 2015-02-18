@@ -1,7 +1,8 @@
 ## Custom elements
 
-* Registered with the document
+* registered with the document
   * meaningful and beautiful tags
-* This inline HTML isn't cool
-* Still vulnerable to external styles
-* What if it depends on external code
+* widest browser support
+* this inline HTML isn't cool
+* still vulnerable to external styles
+* what if it depends on external code?
