@@ -10,7 +10,7 @@
     [
       "web-components/index.md",
       "web-components/parts.md"
-    ].
+    ],
     [
         "web-components/custom-elements.md",
         "web-components/custom-elements-summary.md"
