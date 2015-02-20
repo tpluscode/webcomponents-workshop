@@ -7,7 +7,10 @@
         "problems/div-soup.md",
         "problems/demo.md"
     ],
-    "web-components/index.md",
+    [
+      "web-components/index.md",
+      "web-components/parts.md"
+    ],
     [
         "web-components/custom-elements.md",
         "web-components/custom-elements-summary.md"
@@ -35,5 +38,9 @@
         "google-map/pure.html"
     ],
     "summary.md",
-    "is-it-ready.md"
+    "is-it-ready.md",
+    [
+      "links.md",
+      "thanks.md"
+    ]
 ]
