@@ -1,4 +1,4 @@
-## Custom elements
+### Custom elements
 
 * registered with the document
   * meaningful and beautiful tags

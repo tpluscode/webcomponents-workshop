@@ -1,4 +1,4 @@
-# Web Components
+## Web Components
 
 [webcomponents.org](http://webcomponents.org)
 

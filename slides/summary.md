@@ -1,5 +1,4 @@
-# Web Components
-## Summary
+## Web Components
 
 * Modularity
 * Reuse

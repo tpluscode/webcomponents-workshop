@@ -1,4 +1,4 @@
-## HTML Imports
+### HTML Imports
 
 <a href="/examples/imports/" target="_blank">DEMO</a>
 <br/><br/>

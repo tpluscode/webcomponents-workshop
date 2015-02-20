@@ -1,4 +1,4 @@
-# Web Components
+## Web Components
 
 * [Custom elements](#/4)
 * [HTML imports](#/5)

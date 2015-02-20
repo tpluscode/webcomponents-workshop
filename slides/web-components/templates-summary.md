@@ -1,4 +1,4 @@
-## Templates
+### Templates
 
 * templates are "normal" HTML, and not strings
   * like Mustache etc.
