@@ -37,8 +37,10 @@
         "google-map/pure-code.html",
         "google-map/pure.html"
     ],
-    "summary.md",
-    "is-it-ready.md",
+    [
+      "summary.md",
+      "is-it-ready.md"
+    ],
     [
       "links.md",
       "thanks.md"

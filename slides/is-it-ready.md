@@ -1,4 +1,3 @@
-## Web Components
 ### Are they ready?
 
 * Native support in Chrome and Opera
