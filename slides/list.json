@@ -12,20 +12,20 @@
       "web-components/parts.md"
     ],
     [
-        "web-components/custom-elements.md",
-        "web-components/custom-elements-summary.md"
+        "web-components/custom-elements-summary.md",
+        "web-components/custom-elements.md"
     ],
     [
-        "web-components/imports.md",
-        "web-components/imports-summary.md"
+        "web-components/imports-summary.md",
+        "web-components/imports.md"
     ],
     [
-        "web-components/templates.md",
-        "web-components/templates-summary.md"
+        "web-components/templates-summary.md",
+        "web-components/templates.md"
     ],
     [
-        "web-components/shadow-dom.md",
-        "web-components/shadow-dom-summary.md"
+        "web-components/shadow-dom-summary.md",
+        "web-components/shadow-dom.md"
     ],
     [
         "polymer/polymer.html",
