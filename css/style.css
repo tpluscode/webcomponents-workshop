@@ -11,3 +11,9 @@
 .reveal img.no-border {
     border: none;
 }
+
+#logo {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
