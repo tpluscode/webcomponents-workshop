@@ -10,16 +10,17 @@ PersonCard.attachedCallback = function() {
     var gravatar = 'http://www.gravatar.com/avatar/' + CryptoJS.MD5(this.getAttribute('email'));
 
     var template = importDoc.querySelector('#person-card-template');
-    template.content.querySelector('#person-card img').src = gravatar;
-    template.content.querySelector('#person-card img').alt += firstName + ' ' + lastName;
-    template.content.querySelector('#person-card .firstName').innerText = firstName;
-    template.content.querySelector('#person-card .lastName').innerText = lastName;
-    template.content.querySelector('#person-card .position').innerText = position;
-    template.content.querySelector('#person-card .company').innerText = company;
-    template.content.querySelector('#person-card a').innerText = '@' + twitter;
-    template.content.querySelector('#person-card a').href = 'http://twitter.com/' + twitter;
+    var content = document.importNode(template.content, true);
+    content.querySelector('#person-card img').src = gravatar;
+    content.querySelector('#person-card img').alt += firstName + ' ' + lastName;
+    content.querySelector('#person-card .firstName').innerText = firstName;
+    content.querySelector('#person-card .lastName').innerText = lastName;
+    content.querySelector('#person-card .position').innerText = position;
+    content.querySelector('#person-card .company').innerText = company;
+    content.querySelector('#person-card a').innerText = '@' + twitter;
+    content.querySelector('#person-card a').href = 'http://twitter.com/' + twitter;
 
-    this.appendChild(document.importNode(template.content, true));
+    this.appendChild(content);
 };
 
 document.registerElement('person-card', {
