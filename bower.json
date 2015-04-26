@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "dependencies": {
     "reveal.js": "~2.6.1",
-    "google-map": "~0.4.1"
+    "google-map": "~0.4.1",
+    "polymer": "Polymer/polymer#^0.8.0-rc.2"
   }
 }
