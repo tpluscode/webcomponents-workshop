@@ -31,8 +31,8 @@
     [
         "polymer/polymer.html",
         "polymer/polymer-demo.md",
-        "polymer/polymer-alt.md",
-        "polymer/polymer-more.md"
+        "polymer/polymer-more.md",
+        "polymer/polymer-alt.md"
     ],
     [
         "google-map/pure-code.html",
