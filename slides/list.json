@@ -32,6 +32,8 @@
         "polymer/polymer.html",
         "polymer/polymer-demo.md",
         "polymer/polymer-more.md",
+        "polymer/vulcanize.md",
+        "polymer/wct.md",
         "polymer/polymer-alt.md"
     ],
     [
