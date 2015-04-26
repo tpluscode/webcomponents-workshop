@@ -1,0 +1,27 @@
+<html>
+<head>
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" ></script>
+    <link rel="import" href="/bower_components/polymer/polymer.html" />
+    <link rel="import" href="person-card.html" />
+    <style>
+        h3 {
+            color: red
+        }
+        person-card a {
+            font-family: serif;
+            text-decoration: none;
+            font-size: 2em;
+        }
+        person-card {
+            display: inline-block;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<h3>This is red</h3>
+<person-card first-name="Tomasz" last-name="Pluskiewicz"
+             email="tomasz@pluskiewicz.pl" company="PGS Software"
+             position="Software dev" twitter="tpluscode"></person-card>
+</body>
+</html>
