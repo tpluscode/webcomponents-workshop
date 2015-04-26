@@ -13,9 +13,11 @@
         <h2>
           <span class="firstName">{{ firstName }}</span> <span class="lastName">{{ lastName }}</span>
         </h2>
-        <h3 id="position">
-          {{ position }} @ {{ company }}
-        </h3>
+        <template if="{{position}}">
+            <h3 id="position">
+              {{ position }} @ {{ company }}
+            </h3>
+        </template>
         <a href="http://twitter.com/{{ twitter }}">@{{ twitter }}</a>
         <button on-click="{{ changeColor }}">Change color</button>
     </div>
