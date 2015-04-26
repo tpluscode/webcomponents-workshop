@@ -1,4 +1,5 @@
 <script src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/md5.js"></script>
+<link rel="import" href="x-gravatar.html" />
 
 <dom-module id="person-card">
     <style>
@@ -17,8 +18,7 @@
 
     <template>
         <div id="person-card">
-            <img id="gravatar" src="{{gravatar}}"
-                 alt="{{gravatarAlt}}">
+            <x-gravatar hash="{{emailHash}}" alt-name="{{fullName}}"></x-gravatar>
             <h2>
                 <span class="firstName">{{firstName}}</span> <span class="lastName">{{lastName}}</span>
             </h2>
@@ -42,29 +42,23 @@
             position: String,
             company: String,
             fullName: {
-                computed: 'firstName + " " + lastName'
+                computed: 'calculateFullName(firstName, lastName)'
             },
-            gravatar: {
-                computed: 'gravatarUrl(email)'
+            emailHash: {
+                computed: 'hash(email)'
             },
             twitterUrl: {
                 computed: 'computeTwitterUrl(twitter)'
-            },
-            gravatarAlt: {
-                computed: 'computeGravatarAlt(fullName)'
             }
         },
         hash: function (email) {
             return CryptoJS.MD5(email);
         },
-        gravatarUrl: function(email){
-            return 'http://www.gravatar.com/avatar/' + this.hash(email);
-        },
         computeTwitterUrl: function(twitter){
             return "http://twitter.com/" + twitter;
         },
-        computeGravatarAlt: function(fullName){
-            return "Gravatar of " + fullName;
+        calculateFullName: function(firstName, lastName){
+            return firstName + ' ' + lastName;
         },
         changeColor: function() {
             if(this.$.position.style.color === 'red') {
