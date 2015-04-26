@@ -22,10 +22,11 @@
             <h2>
                 <span class="firstName">{{firstName}}</span> <span class="lastName">{{lastName}}</span>
             </h2>
-            <h3>
+            <h3 id="position">
                 <span>{{position}}</span> @ <span>{{company}}</span>
             </h3>
             <a href="{{twitterUrl}}" target="_blank">@<span>{{twitter}}</span></a>
+            <button on-click="changeColor">Change color</button>
         </div>
     </template>
 </dom-module>
@@ -64,6 +65,13 @@
         },
         computeGravatarAlt: function(fullName){
             return "Gravatar of " + fullName;
+        },
+        changeColor: function() {
+            if(this.$.position.style.color === 'red') {
+                this.$.position.style.color = 'black';
+            } else {
+                this.$.position.style.color = 'red';
+            }
         }
     });
 </script>

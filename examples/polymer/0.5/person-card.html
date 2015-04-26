@@ -13,10 +13,11 @@
         <h2>
           <span class="firstName">{{ firstName }}</span> <span class="lastName">{{ lastName }}</span>
         </h2>
-        <h3>
+        <h3 id="position">
           {{ position }} @ {{ company }}
         </h3>
         <a href="http://twitter.com/{{ twitter }}">@{{ twitter }}</a>
+        <button on-click="{{ changeColor }}">Change color</button>
     </div>
   </template>
 
@@ -24,6 +25,13 @@
     Polymer('person-card', {      
         hash: function(email) {
           return CryptoJS.MD5(email);
+      },
+      changeColor: function() {
+          if(this.$.position.style.color === 'red') {
+              this.$.position.style.color = 'black';
+          } else {
+              this.$.position.style.color = 'red';
+          }
       }
     });
   </script>
