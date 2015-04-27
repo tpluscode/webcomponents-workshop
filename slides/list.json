@@ -35,6 +35,7 @@
         "polymer/0.8.md",
         "polymer/0.8-changes.md",
         "polymer/0.8-demo.md",
+        "polymer/require.md",
         "polymer/vulcanize.md",
         "polymer/wct.md",
         "polymer/links.md",
