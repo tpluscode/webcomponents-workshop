@@ -4,7 +4,7 @@
 * Require.js - check
   * (<a href="/examples/polymer/0.5" target="_blank">DEMO</a> <a href="http://localhost:3000/polymer/0.5" target="_blank">(local DEMO)</a>
 * Other UI libraries - your mileage may vary
-  * React recongnizes only built-in and React tags
+  * React recognizes only built-in and React tags
   * Angular - possible but requires some wor (for now)
   * Backbone may be a good match (?)
 * Web Components are _just UI_
