@@ -7,5 +7,9 @@
     "polymer": "Polymer/polymer#^0.8.0-rc.2",
     "requirejs": "~2.1.17",
     "cryptojslib": "~3.1.2"
+  },
+  "resolutions": {
+    "webcomponentsjs": "^0.6.0",
+    "polymer": "^0.8.0-rc.2"
   }
 }
