@@ -64,7 +64,7 @@ be true.
 -->
 
 <!--
-Fired  when the mouse leaves the area of the marker icon. Requires the mouseEvents attribute to be
+Fired when the mouse leaves the area of the marker icon. Requires the mouseEvents attribute to be
 true.
 
 @event google-map-marker-mouseout
@@ -92,7 +92,7 @@ Fired for a rightclick on the marker. Requires the clickEvents attribute to be t
 @event google-map-marker-rightclick
 @param {google.maps.MouseEvent} event The mouse event.
 -->
-<polymer-element name="google-map-marker" attributes="clickEvents icon mouseEvents">
+<polymer-element name="google-map-marker" attributes="clickEvents icon mouseEvents zIndex">
 <template>
   <style>
     :host {
@@ -158,6 +158,15 @@ Fired for a rightclick on the marker. Requires the clickEvents attribute to be t
        * @default false
        */
       mouseEvents: false,
+
+      /**
+       * Z-index for the marker icon.
+       *
+       * @attribute zIndex
+       * @type number
+       * @default 0
+       */
+      zIndex: 0,
 
       publish: {
         /**
@@ -242,6 +251,12 @@ Fired for a rightclick on the marker. Requires the clickEvents attribute to be t
         }
       },
 
+      zIndexChanged: function() {
+        if (this.marker) {
+          this.marker.setZIndex(this.zIndex);
+        }
+      },
+
       mapChanged: function() {
         // Marker will be rebuilt, so disconnect existing one from old map and listeners.
         if (this.marker) {
@@ -284,7 +299,8 @@ Fired for a rightclick on the marker. Requires the clickEvents attribute to be t
           title: this.title,
           draggable: this.draggable,
           visible: !this.hidden,
-          icon: this.icon
+          icon: this.icon,
+          zIndex: this.zIndex
         });
         this.contentChanged();
         this.clickEventsChanged();
@@ -413,12 +429,67 @@ Fired when the Maps API has fully loaded.
 
 @event google-map-ready
 -->
+<!--
+Fired when the when the user clicks on the map (but not when they click on a marker, infowindow, or
+other object). Requires the clickEvents attribute to be true.
+
+@event google-map-click
+@param {google.maps.MouseEvent} event The mouse event.
+-->
+<!--
+Fired when the user double-clicks on the map. Note that the google-map-click event will also fire,
+right before this one. Requires the clickEvents attribute to be true.
+
+@event google-map-dblclick
+@param {google.maps.MouseEvent} event The mouse event.
+-->
+<!--
+Fired repeatedly while the user drags the map. Requires the dragEvents attribute to be true.
+
+@event google-map-drag
+-->
+<!--
+Fired when the user stops dragging the map. Requires the dragEvents attribute to be true.
+
+@event google-map-dragend
+-->
+<!--
+Fired when the user starts dragging the map. Requires the dragEvents attribute to be true.
+
+@event google-map-dragstart
+-->
+<!--
+Fired whenever the user's mouse moves over the map container. Requires the mouseEvents attribute to
+be true.
+
+@event google-map-mousemove
+@param {google.maps.MouseEvent} event The mouse event.
+-->
+<!--
+Fired when the user's mouse exits the map container. Requires the mouseEvents attribute to be true.
+
+@event google-map-mouseout
+@param {google.maps.MouseEvent} event The mouse event.
+-->
+<!--
+Fired when the user's mouse enters the map container. Requires the mouseEvents attribute to be true.
+
+@event google-map-mouseover
+@param {google.maps.MouseEvent} event The mouse event.
+-->
+<!--
+Fired when the DOM `contextmenu` event is fired on the map container. Requires the clickEvents
+attribute to be true.
+
+@event google-map-rightclick
+@param {google.maps.MouseEvent} event The mouse event.
+-->
 
 <!-- TODO(ericbidelman):
 - Handle removals and support .innerHTML = ''.
 - Use <google-maps-api>.api instead of google.maps namespace.
 -->
-<polymer-element name="google-map" attributes="apiKey latitude longitude zoom noAutoTilt showCenterMarker version map mapType disableDefaultUI fitToMarkers zoomable styles maxZoom minZoom libraries signedIn">
+<polymer-element name="google-map" attributes="apiKey clientId latitude longitude zoom noAutoTilt showCenterMarker version map mapType disableDefaultUI fitToMarkers zoomable styles maxZoom minZoom libraries signedIn clickEvents dragEvents mouseEvents">
 <template>
 
   <style>
@@ -439,7 +510,7 @@ Fired when the Maps API has fully loaded.
 
   </style>
 
-  <google-maps-api apiKey="{{apiKey}}" version="{{version}}" on-api-load="{{mapApiLoaded}}" libraries="{{libraries}}" signedIn="{{signedIn}}"></google-maps-api>
+  <google-maps-api apiKey="{{apiKey}}" clientId="{{clientId}}" version="{{version}}" on-api-load="{{mapApiLoaded}}" libraries="{{libraries}}" signedIn="{{signedIn}}"></google-maps-api>
 
   <div id="map"></div>
 
@@ -457,6 +528,15 @@ Fired when the Maps API has fully loaded.
      * @type string
      */
     apiKey: null,
+
+    /**
+     * A Maps API for Business Client ID. To obtain a Maps API for Business Client ID, see developers.google.com/maps/documentation/business/.
+     * If set, a Client ID will take precedence over an API Key.
+     *
+     * @attribute clientId
+     * @type string
+     */
+    clientId: null,
 
     /**
      * A latitude to center the map on.
@@ -597,6 +677,33 @@ Fired when the Maps API has fully loaded.
      */
     signedIn: false,
 
+    /**
+     * When true, map *click events are automatically registered.
+     *
+     * @attribute clickEvents
+     * @type boolean
+     * @default false
+     */
+    clickEvents: false,
+
+    /**
+     * When true, map drag* events are automatically registered.
+     *
+     * @attribute dragEvents
+     * @type boolean
+     * @default false
+     */
+    dragEvents: false,
+
+    /**
+     * When true, map mouse* events are automatically registered.
+     *
+     * @attribute mouseEvents
+     * @type boolean
+     * @default false
+     */
+    mouseEvents: false,
+
     observe: {
       latitude: 'updateCenter',
       longitude: 'updateCenter'
@@ -613,6 +720,7 @@ Fired when the Maps API has fully loaded.
     mapApiLoaded: function() {
       this.map = new google.maps.Map(this.$.map, this.getMapOptions());
 
+      this._listeners = {};
       this.updateCenter();
       this.updateMarkers();
       this.addMapListeners();
@@ -727,6 +835,48 @@ Fired when the Maps API has fully loaded.
       }
     },
 
+    clickEventsChanged: function() {
+      if (this.map) {
+        if (this.clickEvents) {
+          this._forwardEvent('click');
+          this._forwardEvent('dblclick');
+          this._forwardEvent('rightclick');
+        } else {
+          this._clearListener('click');
+          this._clearListener('dblclick');
+          this._clearListener('rightclick');
+        }
+      }
+    },
+
+    dragEventsChanged: function() {
+      if (this.map) {
+        if (this.dragEvents) {
+          this._forwardEvent('drag');
+          this._forwardEvent('dragend');
+          this._forwardEvent('dragstart');
+        } else {
+          this._clearListener('drag');
+          this._clearListener('dragend');
+          this._clearListener('dragstart');
+        }
+      }
+    },
+
+    mouseEventsChanged: function() {
+      if (this.map) {
+        if (this.mouseEvents) {
+          this._forwardEvent('mousemove');
+          this._forwardEvent('mouseout');
+          this._forwardEvent('mouseover');
+        } else {
+          this._clearListener('mousemove');
+          this._clearListener('mouseout');
+          this._clearListener('mouseover');
+        }
+      }
+    },
+
     maxZoomChanged: function() {
       if (this.map) {
         this.map.setOptions({maxZoom: Number(this.maxZoom)});
@@ -763,7 +913,9 @@ Fired when the Maps API has fully loaded.
           this.centerMarker = null;
         }
       }
-      this.updateMarkers();
+      if (this.centerMarker) {
+        this.updateMarkers();
+      }
     },
 
     disableDefaultUIChanged: function() {
@@ -823,6 +975,23 @@ Fired when the Maps API has fully loaded.
 
       google.maps.event.addListener(this.map, 'zoom_changed', function() {
         this.zoom = this.map.getZoom();
+      }.bind(this));
+
+      this.clickEventsChanged();
+      this.dragEventsChanged();
+      this.mouseEventsChanged();
+    },
+
+    _clearListener: function(name) {
+      if (this._listeners[name]) {
+        google.maps.event.removeListener(this._listeners[name]);
+        this._listeners[name] = null;
+      }
+    },
+
+    _forwardEvent: function(name) {
+      this._listeners[name] = google.maps.event.addListener(this.map, name, function(event) {
+        this.fire('google-map-' + name, event);
       }.bind(this));
     }
 

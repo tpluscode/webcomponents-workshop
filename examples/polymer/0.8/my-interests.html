@@ -1,0 +1,21 @@
+<dom-module id="my-interests">
+    <template>
+        My interests include:
+        <ul>
+            <template is="x-repeat" items="{{interests}}">
+                <li>{{item}}</li>
+            </template>
+        </ul>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'my-interests',
+        properties:{
+            interests: {
+                type: Array
+            }
+        }
+    })
+</script>

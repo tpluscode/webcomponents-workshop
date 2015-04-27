@@ -31,8 +31,15 @@
     [
         "polymer/polymer.html",
         "polymer/polymer-demo.md",
-        "polymer/polymer-alt.md",
-        "polymer/polymer-more.md"
+        "polymer/polymer-more.md",
+        "polymer/0.8.md",
+        "polymer/0.8-changes.md",
+        "polymer/0.8-demo.md",
+        "polymer/require.md",
+        "polymer/vulcanize.md",
+        "polymer/wct.md",
+        "polymer/links.md",
+        "polymer/polymer-alt.md"
     ],
     [
         "google-map/pure-code.html",
