@@ -1,56 +1,35 @@
 [
     "index.md",
     "me.md",
+    [
+        "issues/index.html",
+        "issues/versions.html",
+        "issues/target-framework.html",
+        "issues/powershell.html",
+        "issues/config.html",
+        "issues/semver.html",
+        "issues/only-nuget.html",
+        "issues/tools-packages.html",
+        "issues/sources.html"
+    ],
+    "paket.md",
     "demos.md",
     [
-        "problems/index.md",
-        "problems/problems.md",
-        "problems/div-soup.md",
-        "problems/demo.md"
+        "paket/index.html",
+        "paket/versions.html",
+        "paket/target-framework.html",
+        "paket/powershell.html",
+        "paket/config.html",
+        "paket/semver.html",
+        "paket/only-nuget.html",
+        "paket/tools-packages.html",
+        "paket/gotchas.html",
+        "paket/sources.html"
     ],
     [
-      "web-components/index.md",
-      "web-components/parts.md"
-    ],
-    [
-        "web-components/custom-elements-summary.md",
-        "web-components/custom-elements.md"
-    ],
-    [
-        "web-components/imports-summary.md",
-        "web-components/imports.md"
-    ],
-    [
-        "web-components/templates-summary.md",
-        "web-components/templates.md"
-    ],
-    [
-        "web-components/shadow-dom-summary.md",
-        "web-components/shadow-dom.md"
-    ],
-    [
-        "polymer/polymer.html",
-        "polymer/polymer-demo.md",
-        "polymer/polymer-more.md",
-        "polymer/0.8.md",
-        "polymer/0.8-changes.md",
-        "polymer/0.8-demo.md",
-        "polymer/require.md",
-        "polymer/vulcanize.md",
-        "polymer/wct.md",
-        "polymer/links.md",
-        "polymer/polymer-alt.md"
-    ],
-    [
-        "google-map/pure-code.html",
-        "google-map/pure.html"
-    ],
-    [
-      "summary.md",
-      "is-it-ready.md"
-    ],
-    [
-      "links.md",
-      "thanks.md"
+        "gotchas/index.html",
+        "gotchas/install-every-time.html",
+        "gotchas/content-files.html",
+        "gotchas/console.html"
     ]
 ]

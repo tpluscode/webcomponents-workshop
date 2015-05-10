@@ -1,7 +1,7 @@
-# Web Components
-## Game changer
+# Paket
+## Package manager
 
 <br/>
 <br/>
-<a href="https://github.com/tpluscode/webcomponents-workshop/"><i class="fa fa-github"></i></a>
-web-components.t-code.pl
+<a href="https://github.com/tpluscode/paket-presentation/"><i class="fa fa-github"></i></a>
+paket.t-code.pl
