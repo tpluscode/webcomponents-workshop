@@ -6,7 +6,7 @@ By default installs oldest matching version
 * [Some rant here](http://andreasohlund.net/2014/04/30/nuget-dependency-resolution-considered-harmful/)
 
 ```
-PM> install-package [Resourcer.Fody](https://www.nuget.org/packages/Resourcer.Fody/)
+PM> install-package Resourcer.Fody
 
 Attempting to resolve dependency 'Fody (≥ 1.13.8)'.
 Installing 'Fody 1.13.8.0'.
