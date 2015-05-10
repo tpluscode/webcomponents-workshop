@@ -24,7 +24,6 @@
         "paket/semver.md",
         "paket/only-nuget.md",
         "paket/tools-packages.md",
-        "paket/gotchas.md",
         "paket/sources.md"
     ],
     [
@@ -32,5 +31,7 @@
         "gotchas/install-every-time.md",
         "gotchas/content-files.md",
         "gotchas/console.md"
-    ]
+    ],
+    "questions.md",
+    "thank-you.md"
 ]
