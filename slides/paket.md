@@ -8,9 +8,3 @@
   * 466 closed issues
   * Immediate response (and fixes) to bugs
   * Frequent releases on GitHub
-
-```
-PM> install-package paket
-```
-
-or [download bootstrapper](https://github.com/fsprojects/Paket/releases/latest)

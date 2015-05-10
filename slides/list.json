@@ -2,34 +2,35 @@
     "index.md",
     "me.md",
     [
-        "issues/index.html",
-        "issues/versions.html",
-        "issues/target-framework.html",
-        "issues/powershell.html",
-        "issues/config.html",
-        "issues/semver.html",
-        "issues/only-nuget.html",
-        "issues/tools-packages.html",
-        "issues/sources.html"
+        "issues/index.md",
+        "issues/versions.md",
+        "issues/target-framework.md",
+        "issues/powershell.md",
+        "issues/config.md",
+        "issues/semver.md",
+        "issues/only-nuget.md",
+        "issues/tools-packages.md",
+        "issues/sources.md"
     ],
     "paket.md",
+    "get-paket.md",
     "demos.md",
     [
-        "paket/index.html",
-        "paket/versions.html",
-        "paket/target-framework.html",
-        "paket/powershell.html",
-        "paket/config.html",
-        "paket/semver.html",
-        "paket/only-nuget.html",
-        "paket/tools-packages.html",
-        "paket/gotchas.html",
-        "paket/sources.html"
+        "paket/index.md",
+        "paket/versions.md",
+        "paket/target-framework.md",
+        "paket/powershell.md",
+        "paket/config.md",
+        "paket/semver.md",
+        "paket/only-nuget.md",
+        "paket/tools-packages.md",
+        "paket/gotchas.md",
+        "paket/sources.md"
     ],
     [
-        "gotchas/index.html",
-        "gotchas/install-every-time.html",
-        "gotchas/content-files.html",
-        "gotchas/console.html"
+        "gotchas/index.md",
+        "gotchas/install-every-time.md",
+        "gotchas/content-files.md",
+        "gotchas/console.md"
     ]
 ]
