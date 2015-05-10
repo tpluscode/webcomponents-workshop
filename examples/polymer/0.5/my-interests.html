@@ -1,0 +1,10 @@
+<polymer-element name="my-interests" noscript attributes="interests">
+    <template>
+        My interests include:
+        <ul>
+            <template repeat="{{item in interests}}">
+                <li>{{item}}</li>
+            </template>
+        </ul>
+    </template>
+</polymer-element>

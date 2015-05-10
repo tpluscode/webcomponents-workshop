@@ -1,6 +1,11 @@
-## Demo
+## Demos
 
-1. (optional) Create project with Nuget packages
-1. Convert to paket
-1. (optional) Install [VS](https://github.com/hmemcpy/Paket.VisualStudio) or [Atom](https://atom.io/packages/paket) extension
-1. Never go back
+All demos can be viewed online and locally.
+
+To run locally:
+
+``` sh
+git clone https://github.com/tpluscode/webcomponents-workshop
+npm install
+node demos.js
+```

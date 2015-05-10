@@ -1,37 +1,56 @@
 [
     "index.md",
     "me.md",
-    [
-        "issues/index.md",
-        "issues/versions.md",
-        "issues/target-framework.md",
-        "issues/powershell.md",
-        "issues/config.md",
-        "issues/semver.md",
-        "issues/only-nuget.md",
-        "issues/tools-packages.md",
-        "issues/sources.md"
-    ],
-    "paket.md",
-    "get-paket.md",
     "demos.md",
     [
-        "paket/index.md",
-        "paket/versions.md",
-        "paket/target-framework.md",
-        "paket/powershell.md",
-        "paket/config.md",
-        "paket/semver.md",
-        "paket/only-nuget.md",
-        "paket/tools-packages.md",
-        "paket/sources.md"
+        "problems/index.md",
+        "problems/problems.md",
+        "problems/div-soup.md",
+        "problems/demo.md"
     ],
     [
-        "gotchas/index.md",
-        "gotchas/install-every-time.md",
-        "gotchas/content-files.md",
-        "gotchas/console.md"
+      "web-components/index.md",
+      "web-components/parts.md"
     ],
-    "questions.md",
-    "thank-you.md"
+    [
+        "web-components/custom-elements-summary.md",
+        "web-components/custom-elements.md"
+    ],
+    [
+        "web-components/imports-summary.md",
+        "web-components/imports.md"
+    ],
+    [
+        "web-components/templates-summary.md",
+        "web-components/templates.md"
+    ],
+    [
+        "web-components/shadow-dom-summary.md",
+        "web-components/shadow-dom.md"
+    ],
+    [
+        "polymer/polymer.html",
+        "polymer/polymer-demo.md",
+        "polymer/polymer-more.md",
+        "polymer/0.8.md",
+        "polymer/0.8-changes.md",
+        "polymer/0.8-demo.md",
+        "polymer/require.md",
+        "polymer/vulcanize.md",
+        "polymer/wct.md",
+        "polymer/links.md",
+        "polymer/polymer-alt.md"
+    ],
+    [
+        "google-map/pure-code.html",
+        "google-map/pure.html"
+    ],
+    [
+      "summary.md",
+      "is-it-ready.md"
+    ],
+    [
+      "links.md",
+      "thanks.md"
+    ]
 ]

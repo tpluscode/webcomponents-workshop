@@ -1,0 +1,73 @@
+<script src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/md5.js"></script>
+<link rel="import" href="x-gravatar.html" />
+<link rel="import" href="my-interests.html" />
+
+<dom-module id="person-card">
+    <style>
+        :host h3 {
+            color: black;
+        }
+
+        #person-card .lastName {
+            text-decoration: underline
+        }
+    </style>
+
+    <style>
+        @import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css';
+    </style>
+
+    <template>
+        <div id="person-card">
+            <x-gravatar hash="{{emailHash}}" alt-name="{{fullName}}"></x-gravatar>
+            <h2>
+                <span class="firstName">{{firstName}}</span> <span class="lastName">{{lastName}}</span>
+            </h2>
+            <h3 id="position" hidden="{{!position}}">
+                <span>{{position}}</span> @ <span>{{company}}</span>
+            </h3>
+            <my-interests interests='[ "Linked Data", "CQRS", "Web Components" ]'></my-interests>
+            <a href="{{twitterUrl}}" target="_blank">@<span>{{twitter}}</span></a>
+            <button on-click="changeColor">Change color</button>
+        </div>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'person-card',
+        properties: {
+            twitter: String,
+            email: String,
+            firstName: String,
+            lastName: String,
+            position: String,
+            company: String,
+            fullName: {
+                computed: 'calculateFullName(firstName, lastName)'
+            },
+            emailHash: {
+                computed: 'hash(email)'
+            },
+            twitterUrl: {
+                computed: 'computeTwitterUrl(twitter)'
+            }
+        },
+        hash: function (email) {
+            return CryptoJS.MD5(email);
+        },
+        computeTwitterUrl: function(twitter){
+            return "http://twitter.com/" + twitter;
+        },
+        calculateFullName: function(firstName, lastName){
+            return firstName + ' ' + lastName;
+        },
+        changeColor: function() {
+            if(this.$.position.style.color === 'red') {
+                this.$.position.style.color = 'black';
+            } else {
+                this.$.position.style.color = 'red';
+            }
+        }
+    });
+</script>
